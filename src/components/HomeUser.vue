@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <header class="jumbotron">
+      <h4>Home Logada</h4>
       <h3>{{ content }}</h3>
     </header>
   </div>
@@ -10,14 +11,14 @@
 import UserService from "../services/user.service";
 
 export default {
-  name: "Admin",
+  name: "User",
   data() {
     return {
       content: "",
     };
   },
   mounted() {
-    UserService.getAdminBoard().then(
+    UserService.getUserBoard().then(
       (response) => {
         this.content = response.data;
       },
